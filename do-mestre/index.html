@@ -1151,9 +1151,22 @@ function initMap(){
       layer.on("mouseout",  ()=>{ geoLayer.resetStyle(layer); });
     }
   }).addTo(mapInstance);
-  mapInstance.fitBounds(geoLayer.getBounds(), {padding:[10,10]});
   labelLayer = L.layerGroup().addTo(mapInstance);
   updateMapStats();
+  fitNordeste();
+  setTimeout(fitNordeste, 150);
+  setTimeout(fitNordeste, 600);
+  window.addEventListener("resize", ()=>{
+    if(!mapInstance) return;
+    clearTimeout(mapResizeTimer);
+    mapResizeTimer = setTimeout(()=>{ mapInstance.invalidateSize(); }, 200);
+  });
+}
+let mapResizeTimer=null;
+function fitNordeste(){
+  if(!mapInstance || !geoLayer) return;
+  mapInstance.invalidateSize();
+  mapInstance.fitBounds(geoLayer.getBounds(), {padding:[12,12]});
 }
 function refreshMapStyles(){
   if(!geoLayer) return;
@@ -1226,7 +1239,7 @@ function buildMapControls(){
     mapClass.clear(); mapUfs.clear();
     document.querySelectorAll("#mapClassFilter .map-f-btn,#mapUfFilter .map-f-btn").forEach(b=>b.classList.remove("on"));
     refreshMapStyles();
-    if(geoLayer) mapInstance.fitBounds(geoLayer.getBounds(), {padding:[10,10]});
+    fitNordeste();
   });
   const si=document.getElementById("mapSearch"), sr=document.getElementById("mapSearchRes");
   si.addEventListener("input", ()=>{
