@@ -1136,7 +1136,7 @@ function popupHTML(m){
 }
 function initMap(){
   if(mapInstance) return;
-  mapInstance = L.map("mapContainer", {center:[-9.0,-42.0], zoom:5, preferCanvas:true, zoomControl:true});
+  mapInstance = L.map("mapContainer", {center:[-9.0,-42.0], zoom:5, preferCanvas:true, zoomControl:true, zoomSnap:0.1, zoomDelta:0.5, wheelPxPerZoomLevel:100});
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/">CARTO</a> · Malha municipal IBGE · Ray Consulting',
     subdomains:"abcd", maxZoom:14
