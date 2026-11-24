@@ -1251,6 +1251,36 @@ a{ color:inherit; }
   .dash-btn.xs{ display:none; }
   .dash-cta{ background:#F6F2FA !important; box-shadow:none !important; }
 }
+
+/* Próxima seção (fim de cada bloco) */
+.next-wrap{ max-width:1280px; margin:0 auto; padding:8px 36px 72px; display:flex; flex-direction:column; align-items:stretch; gap:14px; }
+.next-card{
+  display:flex; align-items:center; gap:24px; width:100%; text-align:left; cursor:pointer; font:inherit;
+  background:linear-gradient(135deg, rgba(112,48,160,0.22), rgba(67,147,157,0.12)), var(--surface-2);
+  border:1px solid rgba(169,114,240,0.34); border-radius:var(--radius); padding:26px 30px; box-shadow:var(--shadow);
+  color:var(--text); transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.next-card:hover{ transform:translateY(-2px); border-color:rgba(169,114,240,0.6); box-shadow:var(--shadow), var(--glow-purple); }
+.next-card:focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
+.next-num{ flex-shrink:0; width:64px; height:64px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+  font-size:24px; font-weight:900; color:var(--purple); background:var(--tint-purple); border:1px solid rgba(169,114,240,0.35); }
+.next-body{ display:flex; flex-direction:column; gap:5px; min-width:0; flex:1; }
+.next-k{ font-size:10.5px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--teal); }
+.next-t{ font-size:22px; font-weight:800; color:var(--text); letter-spacing:-0.4px; }
+.next-d{ font-size:13.8px; color:var(--text-mid); line-height:1.6; max-width:80ch; }
+.next-arrow{ flex-shrink:0; font-size:28px; font-weight:800; color:var(--purple); transition:transform .2s ease; }
+.next-card:hover .next-arrow{ transform:translateX(4px); }
+.to-top{ align-self:center; background:none; border:none; cursor:pointer; font:inherit; font-size:12.5px; font-weight:700; color:var(--text-dim); padding:6px 10px; }
+.to-top:hover{ color:var(--text); }
+.bloco-layout + .next-wrap{ margin-top:8px; }
+@media (max-width:640px){
+  .next-wrap{ padding:4px 18px 56px; }
+  .next-card{ gap:16px; padding:20px; }
+  .next-num{ width:48px; height:48px; font-size:19px; border-radius:11px; }
+  .next-t{ font-size:18px; }
+  .next-arrow{ display:none; }
+}
+@media print{ .next-wrap{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -1531,6 +1561,16 @@ a{ color:inherit; }
 
   </div>
   </div>
+  <!-- PRÓXIMA SEÇÃO INÍCIO -->
+  <div class="next-wrap">
+    <button class="next-card" onclick="goNext('b1')">
+      <span class="next-num">01</span>
+      <span class="next-body"><span class="next-k">Próxima seção</span><span class="next-t">Discovery</span><span class="next-d">Panorama do ecossistema de inovação em saúde e teste da hipótese de problema: a dor existe, é relevante e alguém paga para resolvê-la?</span></span>
+      <span class="next-arrow" aria-hidden="true">→</span>
+    </button>
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Voltar ao topo</button>
+  </div>
+  <!-- PRÓXIMA SEÇÃO FIM -->
 </section>
 
 <!-- ============================================================ SEÇÃO 1 · DISCOVERY ============================================================ -->
@@ -1762,6 +1802,16 @@ a{ color:inherit; }
 
   </div>
   </div>
+  <!-- PRÓXIMA SEÇÃO INÍCIO -->
+  <div class="next-wrap">
+    <button class="next-card" onclick="goNext('b2')">
+      <span class="next-num">02</span>
+      <span class="next-body"><span class="next-k">Próxima seção</span><span class="next-t">Market Fit</span><span class="next-d">ICPs, dimensionamento de healthtechs, instituições e médicos, matriz de caminhos, valor de mercado, concorrência, presença digital, posicionamento, preços e fomento.</span></span>
+      <span class="next-arrow" aria-hidden="true">→</span>
+    </button>
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Voltar ao topo</button>
+  </div>
+  <!-- PRÓXIMA SEÇÃO FIM -->
 </section>
 
 <!-- ============================================================ SEÇÃO 2 · MARKET FIT ============================================================ -->
@@ -2733,6 +2783,16 @@ a{ color:inherit; }
 
   </div>
   </div>
+  <!-- PRÓXIMA SEÇÃO INÍCIO -->
+  <div class="next-wrap">
+    <button class="next-card" onclick="goNext('b3')">
+      <span class="next-num">03</span>
+      <span class="next-body"><span class="next-k">Próxima seção</span><span class="next-t">Go-to-Market</span><span class="next-d">Modelo de negócio, motion, funis e canais, eventos, matriz produto × mercado, as 5 decisões de execução e a narrativa para fomento.</span></span>
+      <span class="next-arrow" aria-hidden="true">→</span>
+    </button>
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Voltar ao topo</button>
+  </div>
+  <!-- PRÓXIMA SEÇÃO FIM -->
 </section>
 
 <!-- ============================================================ SEÇÃO 3 · GO-TO-MARKET ============================================================ -->
@@ -2962,6 +3022,16 @@ a{ color:inherit; }
 
   </div>
   </div>
+  <!-- PRÓXIMA SEÇÃO INÍCIO -->
+  <div class="next-wrap">
+    <button class="next-card" onclick="goNext('fontes')">
+      <span class="next-num">≡</span>
+      <span class="next-body"><span class="next-k">Próxima seção</span><span class="next-t">Fontes</span><span class="next-d">Lista completa das fontes citadas no relatório.</span></span>
+      <span class="next-arrow" aria-hidden="true">→</span>
+    </button>
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Voltar ao topo</button>
+  </div>
+  <!-- PRÓXIMA SEÇÃO FIM -->
 </section>
 
 <!-- ============================================================ FONTES ============================================================ -->
@@ -3073,6 +3143,16 @@ a{ color:inherit; }
     <!-- FONTES FIM -->
   </div>
   </div>
+  <!-- PRÓXIMA SEÇÃO INÍCIO -->
+  <div class="next-wrap">
+    <button class="next-card" onclick="goNext('home')">
+      <span class="next-num">•</span>
+      <span class="next-body"><span class="next-k">Voltar ao início</span><span class="next-t">Início</span><span class="next-d">Volta ao início do relatório: sumário executivo, acesso ao dashboard e estrutura das seções.</span></span>
+      <span class="next-arrow" aria-hidden="true">→</span>
+    </button>
+    <button class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Voltar ao topo</button>
+  </div>
+  <!-- PRÓXIMA SEÇÃO FIM -->
 </section>
 
 </main>
@@ -3409,6 +3489,8 @@ function updateReadingProgress(){
 (function(){
   function fillAll(){ document.querySelectorAll('.bar-fill[data-target], .range-fill[data-target]').forEach(function(el){ el.dataset.filled='1'; el.style.transition='none'; el.style.width = el.dataset.target; }); }
   window.addEventListener('beforeprint', fillAll);
+  /* card "Próxima seção": troca de bloco e começa a leitura do topo, sem animação de subida */
+  window.goNext = function(v){ var h = document.documentElement, prev = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; showView(v); window.scrollTo({top:0, left:0, behavior:'instant'}); setTimeout(function(){ window.scrollTo({top:0, left:0, behavior:'instant'}); h.style.scrollBehavior = prev; }, 30); };
   if(window.matchMedia){ var mq = window.matchMedia('print'); if(mq.addEventListener) mq.addEventListener('change', function(e){ if(e.matches) fillAll(); }); }
 })();
 </script>
